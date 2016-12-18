@@ -39,27 +39,27 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/Cellar/cmake/3.6.2/bin/cmake
+CMAKE_COMMAND = /home/sean/Tools/clion-2016.3.1/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/Cellar/cmake/3.6.2/bin/cmake -E remove -f
+RM = /home/sean/Tools/clion-2016.3.1/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/xiaowenzhang/Dropbox/projects/LeetCode
+CMAKE_SOURCE_DIR = /home/sean/ClionProjects/LeetCode
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/xiaowenzhang/Dropbox/projects/LeetCode
+CMAKE_BINARY_DIR = /home/sean/ClionProjects/LeetCode
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/local/Cellar/cmake/3.6.2/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/home/sean/Tools/clion-2016.3.1/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -70,7 +70,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/Cellar/cmake/3.6.2/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/sean/Tools/clion-2016.3.1/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/xiaowenzhang/Dropbox/projects/LeetCode/CMakeFiles /Users/xiaowenzhang/Dropbox/projects/LeetCode/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sean/ClionProjects/LeetCode/CMakeFiles /home/sean/ClionProjects/LeetCode/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/xiaowenzhang/Dropbox/projects/LeetCode/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sean/ClionProjects/LeetCode/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,32 +123,32 @@ go/fast:
 	$(MAKE) -f CMakeFiles/go.dir/build.make CMakeFiles/go.dir/build
 .PHONY : go/fast
 
-test.o: test.cpp.o
+013_Roman_to_Integer/solution.o: 013_Roman_to_Integer/solution.cpp.o
 
-.PHONY : test.o
+.PHONY : 013_Roman_to_Integer/solution.o
 
 # target to build an object file
-test.cpp.o:
-	$(MAKE) -f CMakeFiles/go.dir/build.make CMakeFiles/go.dir/test.cpp.o
-.PHONY : test.cpp.o
+013_Roman_to_Integer/solution.cpp.o:
+	$(MAKE) -f CMakeFiles/go.dir/build.make CMakeFiles/go.dir/013_Roman_to_Integer/solution.cpp.o
+.PHONY : 013_Roman_to_Integer/solution.cpp.o
 
-test.i: test.cpp.i
+013_Roman_to_Integer/solution.i: 013_Roman_to_Integer/solution.cpp.i
 
-.PHONY : test.i
+.PHONY : 013_Roman_to_Integer/solution.i
 
 # target to preprocess a source file
-test.cpp.i:
-	$(MAKE) -f CMakeFiles/go.dir/build.make CMakeFiles/go.dir/test.cpp.i
-.PHONY : test.cpp.i
+013_Roman_to_Integer/solution.cpp.i:
+	$(MAKE) -f CMakeFiles/go.dir/build.make CMakeFiles/go.dir/013_Roman_to_Integer/solution.cpp.i
+.PHONY : 013_Roman_to_Integer/solution.cpp.i
 
-test.s: test.cpp.s
+013_Roman_to_Integer/solution.s: 013_Roman_to_Integer/solution.cpp.s
 
-.PHONY : test.s
+.PHONY : 013_Roman_to_Integer/solution.s
 
 # target to generate assembly for a file
-test.cpp.s:
-	$(MAKE) -f CMakeFiles/go.dir/build.make CMakeFiles/go.dir/test.cpp.s
-.PHONY : test.cpp.s
+013_Roman_to_Integer/solution.cpp.s:
+	$(MAKE) -f CMakeFiles/go.dir/build.make CMakeFiles/go.dir/013_Roman_to_Integer/solution.cpp.s
+.PHONY : 013_Roman_to_Integer/solution.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... go"
-	@echo "... test.o"
-	@echo "... test.i"
-	@echo "... test.s"
+	@echo "... 013_Roman_to_Integer/solution.o"
+	@echo "... 013_Roman_to_Integer/solution.i"
+	@echo "... 013_Roman_to_Integer/solution.s"
 .PHONY : help
 
 
