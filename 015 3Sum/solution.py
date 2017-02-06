@@ -33,3 +33,7 @@ class Solution(object):
                     l += 1
                     r -= 1
         return res
+
+a = Solution()
+sums = [-1, 0, 1, 2, -1, -4]
+print(a.threeSum(sums))
