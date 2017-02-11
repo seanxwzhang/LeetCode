@@ -7,6 +7,24 @@
 class Solution {
 public:
     int threeSumClosest(vector<int>& nums, int target) {
-        
+        sort(nums.begin(), nums.end());
+        int sofar = INT_MAX;
+        for (int i = 0; i < nums.size(); i++) {
+            int cur = -nums[i];
+            int j = i+1, k = nums.size() - 1;
+            while(j < k) {
+                int sum = nums[j] + nums[k];
+                if (sum < cur)  
+                    j++;
+                else if (sum > cur)
+                    k--;
+                sofar = min(sofar, sum - cur);
+                if (sofar == 0) return sofar;
+                while(j < k && nums[j] == nums[j+1]) j++;
+                while(j < k && nums[k] == nums[k-1]) k--;
+            }
+            while(i < nums.size() - 1 && nums[i] == nums[i+1]) i++;
+        }
+        return sofar;
     }
 };
