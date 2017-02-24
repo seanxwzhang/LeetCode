@@ -1,3 +1,5 @@
 .idea
 CMakeFiles
 go
+.vscode/settings.json
+tags
