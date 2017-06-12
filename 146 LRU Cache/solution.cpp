@@ -26,8 +26,8 @@
 using namespace std;
 
 class LRUCache {
-    unordered_map<int, list<pair<int, int> >::iterator> hashmap;
-    list<pair<int, int> > lru;
+    unordered_map<int, list<pair<int, int> >::iterator> hashmap; // key-iterator
+    list<pair<int, int> > lru; // key-value pair
     const int cap;
 public:
     LRUCache(int capacity): cap(capacity) {
