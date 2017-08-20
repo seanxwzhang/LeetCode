@@ -94,26 +94,25 @@ def quick_sort(nums):
 
 
 def performance_test(sort_methods):
-    N, l, r, testcase = 1000, 0, 100000, []
+    N, l, r, testcase = 5000, 0, 100000, []
     for i in xrange(N):
         testcase.append(randint(l, r))
     for sort in sort_methods:
         starttime = time.time()
-        sort(testcase)
+        sort(testcase[:])
         endtime = time.time()
         print(sort.__name__ + " takes " + str(endtime - starttime) + " seconds")
 
 def validate(sort):
-    N, l, r, testcase = 15, 0, 100, []
+    N, l, r, testcase = 25, 0, 100, []
     for i in xrange(N):
         testcase.append(randint(l, r))
-    # testcase = [66, 17, 7, 61, 5, 66, 67, 68, 58, 14, 62, 75, 73, 26, 48]
     print('sorting ' + str(testcase))
     for sorty in sort:
         print(sorty.__name__ + ": " + str(sorty(testcase[:])))
 
 
 if __name__ == "__main__":
-    sort_methods = [merge_sort, quick_sort, insertion_sort, selection_sort, bubble_sort1]
+    sort_methods = [merge_sort, quick_sort, insertion_sort, selection_sort, bubble_sort, bubble_sort1]
     validate(sort_methods)
     performance_test(sort_methods)
