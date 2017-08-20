@@ -1,5 +1,9 @@
 .idea
 CMakeFiles
 go
-.vscode/settings.json
+.vscode
 tags
+out
+LeetCode.iml
+debug
+projectFilesBackup

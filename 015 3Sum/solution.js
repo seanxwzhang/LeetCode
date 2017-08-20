@@ -55,3 +55,23 @@ var twoSum = function(numbers, target) {
 };
 
 console.log(threeSum([0,0,0]));
+
+function debugTask(identity) {
+    if (!(this instanceof debugTask)) {
+        var tmp = new debugTask();
+        tmp.identity = identity;
+        return tmp;
+    }
+}
+
+debugTask.prototype.handleRequest = function(typedRequest, opts, handle) {
+    console.log('debugger' + this.identity + ' handling request');
+};
+debugTask.prototype.handleResponse = function(err, value, handle) {
+    console.log('debugger' + this.identity + ' handling response');
+};
+
+var a = debugTask('123')
+console.log(a);
+
+a.handleRequest(null, null, null)
