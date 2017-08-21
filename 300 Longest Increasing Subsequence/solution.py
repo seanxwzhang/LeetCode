@@ -22,25 +22,44 @@ class Solution(object):
                 res = l[i]
         return res
 
+    # Find the index of the largest element in arr that's smaller than than target
+    # Prerequisite: there exists such element
+    def biSearch(self, arr, target):
+        print('searching %d' % target)
+        l, r = 0, len(arr) - 1
+        while (r - l) > 1:
+            m = l + (r - l) / 2
+            print('arr[%d] is %d, arr[%d] is %d, arr[%d] is %d' % (l, arr[l], r, arr[r], m,  arr[m]))
+            if arr[m] < target:
+                l = m
+            else:
+                r = m
+        return r
+
     def optiomalSolution(self, nums):
         aux = [] # aux[i] is the end element [val, length] of the ith active list
         for num in nums:
-            # if num is smaller than all current ends, create a new list to the first element
-            if not aux or num < aux[0][0]:
-                aux = [[num, 1]] + aux
+            print(aux)
+            if not aux:
+                aux = [num]
+            # if num is smaller or equal to all current ends, create a new list to the first element
+            elif num <= aux[0]:
+                aux[0] = num
             # if num is greater than all current ends, added a new list to the tail
-            elif num > aux[-1][0]:
-                aux.append([num, aux[-1][1] + 1])
+            elif num > aux[-1]:
+                aux.append(num)
             # else, search for the flooring element of num, extend it, remove any other list having the same length
             else:
-
+                index = self.biSearch(aux, num)
+                print('index is %d' % index)
+                aux[index] = num
+        return len(aux)
 
     def lengthOfLIS(self, nums):
-        return self.subOptimalSolution(nums)
+        return self.optiomalSolution(nums)
 
 if __name__ == "__main__":
     s = Solution()
-    r = s.lengthOfLIS([10,9,2,5,3,7,101,18,33,2,41,23,15])
+    r = s.lengthOfLIS([4,10,4,3,8,9])
     print(r)
-
 
