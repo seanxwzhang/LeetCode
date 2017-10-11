@@ -7,4 +7,5 @@ out
 LeetCode.iml
 debug
 projectFilesBackup
+*.cbp
 *.dSYM
