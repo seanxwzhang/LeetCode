@@ -1,9 +1,64 @@
-cmake_minimum_required(VERSION 3.6)
+cmake_minimum_required(VERSION 3.8)
 project(LeetCode)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Werror")
+set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES "056 Merge Intervals/solution.cpp")
+set(SOURCE_FILES
+    "002 Add Two Numbers/solution.cpp"
+    "003 Longest Substring Without Repeating Characters/solution.cpp"
+    "004 Median of Two Sorted Array/solution.cpp"
+    "007 Reverse Integer/solution.cpp"
+    "010 Regular Expression Matching/solution.cpp"
+    "010 Regular Expression Matching/test.cpp"
+    "012 Integer to Roman/solution.cpp"
+    "013 Roman to Integer/solution.cpp"
+    "014 Longest Common Prefix/solution.cpp"
+    "015 3Sum/solution.cpp"
+    "016 3 Sum Closest/solution.cpp"
+    "018 4 Sum/solution.cpp"
+    "033 Search in Rotated Sorted Array/solution.cpp"
+    "036 Valid Sudoku/solution.cpp"
+    "039 Combination Sum/solution.cpp"
+    "049 Group Anagrams/solution.cpp"
+    "056 Merge Intervals/solution.cpp"
+    "057 Insert Interval/solution.cpp"
+    "084 Largest Rectangle in Histogram/solution.cpp"
+    "085 Maximal Rectangle/solution.cpp"
+    "102 Binary Tree Level Order Traversal/solution.cpp"
+    "107 Binary Tree Level Order Traversal II/solution.cpp"
+    "133 Clone Graph/solution.cpp"
+    "138 Copy List with Random Pointer/solution.cpp"
+    "139 Word Break/solution.cpp"
+    "140 Word Break II/solution.cpp"
+    "146 LRU Cache/solution.cpp"
+    "153 Find Minimum in Rotated Sorted Array/solution.cpp"
+    "154 Find Minimum in Rotated Sorted Array II/solution.cpp"
+    "157 Read N Characters Given Read4/solution.cpp"
+    "158 Read N Characters Given Read4 II - Call multiple times/solution.cpp"
+    "159 Longest Substring with At Most Two Distinct Characters/solution.cpp"
+    "167 Two Sum II - Input array is sorted/solution.cpp"
+    "168 Excel Sheet Column Title/solution.cpp"
+    "171 Excel Sheet Column Number/solution.cpp"
+    "189 Rotate Array/solution.cpp"
+    "208 Implement Trie (Prefix Tree)/solution.cpp"
+    "212 Word Search II/solution.cpp"
+    "223 Rectangle Area/solution.cpp"
+    "224 Basic Calculator/solution.cpp"
+    "242 Valid Anagram/solution.cpp"
+    "252 Meeting Rooms/solution.cpp"
+    "295 Find Median From Data Stream/solution.cpp"
+    "297 Serialize and Deserialize Binary Tree/solution.cpp"
+    "341 Flatten Nested List Iterator/solution.cpp"
+    "347 Top K Frequent Elements/solution.cpp"
+    "359 Logger Rate Limiter/solution.cpp"
+    "362 Design Hit Counter/solution.cpp"
+    "374 Guess Number Higher or Lower/solution.cpp.cpp"
+    "389 Find The Difference/solution.cpp"
+    "392 Is Subsequence/solution.cpp"
+    "396 Rotate Function/solution.cpp"
+    "419 Battleships in a Board/solution.cpp"
+    "460 LFU Cache/solution.cpp"
+    "479 Largest Palindrome Product/solution.cpp"
+    Airbnb/2d_iterator_remove.cpp)
 
-add_executable(go ${SOURCE_FILES})
-
+add_executable(LeetCode ${SOURCE_FILES})
