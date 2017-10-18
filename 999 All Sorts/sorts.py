@@ -90,11 +90,34 @@ def quick_sort(nums):
     left.extend(right)
     return left
 
+def quick_partition(nums):
+    pivot = randint(0, len(nums) - 1)
+    nums[0], nums[pivot] = nums[pivot], nums[0]
+    i = 0
+    for j in xrange(1, len(nums)):
+        if nums[j] < nums[0]:
+            i += 1
+            nums[j], nums[i] = nums[i], nums[j]
+    nums[0], nums[i] = nums[i], nums[0]
+    return i
+
+def quick_select(nums, k):
+    if not nums:
+        return None
+    if k < 0 or k >= len(nums):
+        raise IndexError()
+    pivot = partition(nums)
+    if pivot == k:
+        return nums[k]
+    elif pivot < k:
+        return quick_select(nums[pivot+1:], k - pivot - 1)
+    else:
+        return quick_select(nums[:pivot], k)
 
 
 
 def performance_test(sort_methods):
-    N, l, r, testcase = 5000, 0, 100000, []
+    N, l, r, testcase = 100, 0, 100000, []
     for i in xrange(N):
         testcase.append(randint(l, r))
     for sort in sort_methods:
@@ -110,9 +133,13 @@ def validate(sort):
     print('sorting ' + str(testcase))
     for sorty in sort:
         print(sorty.__name__ + ": " + str(sorty(testcase[:])))
+    k = randint(0, len(testcase) - 1)
+    print('selecting {0}th element from testcase'.format([k]))
+    print(quick_select(testcase[:], k))
 
 
 if __name__ == "__main__":
     sort_methods = [merge_sort, quick_sort, insertion_sort, selection_sort, bubble_sort, bubble_sort1]
     validate(sort_methods)
     performance_test(sort_methods)
+

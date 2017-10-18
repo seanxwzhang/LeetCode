@@ -1,0 +1,2 @@
+# Read from the file file.txt and print its transposed content to stdout.
+cat 'file.txt' | awk '{if (NR==1) n=NF; for (i = 1; i <= NF; i++) (res[i] == "") ? res[i] = $i : res[i] = res[i] " " $i;} END {for (i = 1; i <= NF; i++) print res[i];}'
