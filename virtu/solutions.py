@@ -15,4 +15,4 @@ def question1(x):
         print(bound2)
         return min(abs(x - bound1), abs(bound2 - x))
 
-print(question1(10))
+
